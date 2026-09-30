@@ -1,0 +1,321 @@
+{
+  "repo": "teddashh/freeworkshop-issue-assets",
+  "slug": "freeworkshop-issue-assets",
+  "name": "freeworkshop-issue-assets",
+  "mark": "FW",
+  "palette": "teal",
+  "default_branch": "main",
+  "verified": "2026-09-30",
+  "title": {
+    "en": "Screenshot storage for issues filed from Discord",
+    "zh": "Discord 回報 issue 的截圖存放區"
+  },
+  "description": {
+    "en": "Stores the screenshots for GitHub issues that the 自由工坊 Discord helper bot files after a reporter or admin confirms the draft. Discord attachment links expire; these copies stay until someone removes them.",
+    "zh": "存放自由工坊 Discord 小幫手 bot 開立 GitHub issue 時附上的截圖，回報者或管理員確認草稿後才會開立。Discord 附件連結會過期，這裡的副本會一直留著，直到有人移除。"
+  },
+  "hero": {
+    "eyebrow": {
+      "en": "Storage repo · 自由工坊 Discord",
+      "zh": "存放用 repo · 自由工坊 Discord"
+    },
+    "headline": {
+      "en": "Discord links expire. <em>Screenshots</em> stay.",
+      "zh": "Discord 連結會過期，<em>截圖</em>不會。"
+    },
+    "lede": {
+      "en": "When someone reports a problem in the 自由工坊 Discord, a helper bot drafts a GitHub issue. After the reporter or an admin confirms the draft, the bot strips each screenshot's metadata, commits it here, and links it from the issue.",
+      "zh": "有人在自由工坊 Discord 回報問題時，小幫手 bot 會先擬好 GitHub issue 草稿。回報者或管理員確認之後，bot 會移除截圖的中繼資料、提交到這個 repo，再從 issue 連結過來。"
+    },
+    "primary": {
+      "href": "#features",
+      "label": {
+        "en": "How it works",
+        "zh": "運作方式"
+      }
+    },
+    "secondary": {
+      "href": "#start",
+      "label": {
+        "en": "Request removal",
+        "zh": "申請移除"
+      }
+    },
+    "notes": [
+      "<owner>/<repo>/<YYYY-MM>/",
+      {
+        "en": "EXIF stripped",
+        "zh": "已移除 EXIF"
+      },
+      {
+        "en": "Images only",
+        "zh": "只放圖片"
+      }
+    ],
+    "visual": {
+      "type": "receipt",
+      "top": {
+        "en": "Issue attachment",
+        "zh": "Issue 附件"
+      },
+      "badge": {
+        "en": "Stored",
+        "zh": "已保存"
+      },
+      "name": "<draft-id>-<n>.<ext>",
+      "meta": {
+        "en": "One screenshot, from Discord to the issue",
+        "zh": "一張截圖，從 Discord 到 issue"
+      },
+      "rows": [
+        {
+          "state": "ok",
+          "label": {
+            "en": "Draft confirmed",
+            "zh": "草稿已確認"
+          },
+          "detail": "Discord",
+          "side": "<draft-id>"
+        },
+        {
+          "state": "ok",
+          "label": {
+            "en": "Metadata stripped",
+            "zh": "移除中繼資料"
+          },
+          "detail": "EXIF"
+        },
+        {
+          "state": "ok",
+          "label": {
+            "en": "Committed here",
+            "zh": "提交到這個 repo"
+          },
+          "detail": "<owner>/<repo>/<YYYY-MM>/",
+          "side": "main"
+        },
+        {
+          "state": "ok",
+          "label": {
+            "en": "Linked from the issue",
+            "zh": "從 issue 連結"
+          },
+          "detail": "raw.githubusercontent.com"
+        }
+      ],
+      "footer": {
+        "left": {
+          "en": "Discord attachment links expire",
+          "zh": "Discord 附件連結會過期"
+        },
+        "right": {
+          "en": "This copy stays",
+          "zh": "這份副本會留著"
+        }
+      }
+    }
+  },
+  "capabilities": {
+    "kicker": {
+      "en": "How it works",
+      "zh": "運作方式"
+    },
+    "title": {
+      "en": "Confirmed first, cleaned, filed by path.",
+      "zh": "先確認、再清理、照路徑歸檔。"
+    },
+    "intro": {
+      "en": "The repository holds images only. The bot that files the issues lives elsewhere.",
+      "zh": "這個 repo 只放圖片，開 issue 的 bot 不在這裡。"
+    },
+    "nav": {
+      "en": "How it works",
+      "zh": "運作方式"
+    },
+    "items": [
+      {
+        "title": {
+          "en": "Nothing lands before a person confirms",
+          "zh": "有人確認之後才會存進來"
+        },
+        "body": {
+          "en": "The bot drafts the issue in Discord first. Screenshots are committed here only after the reporter or an admin confirms that draft.",
+          "zh": "bot 會先在 Discord 裡擬好 issue 草稿，等回報者或管理員確認之後，截圖才會提交到這裡。"
+        },
+        "tag": "Discord draft"
+      },
+      {
+        "title": {
+          "en": "One predictable path per file",
+          "zh": "每個檔案都有固定路徑"
+        },
+        "body": {
+          "en": "Files land at <code><owner>/<repo>/<YYYY-MM>/<draft-id>-<n>.<ext></code>: the repository the issue was filed in, the month, the Discord draft ID, and the screenshot number.",
+          "zh": "檔案會存在 <code><owner>/<repo>/<YYYY-MM>/<draft-id>-<n>.<ext></code>：依序是 issue 所在的 repo、月份、Discord 草稿編號和第幾張截圖。"
+        },
+        "tag": "owner/repo/YYYY-MM/"
+      },
+      {
+        "title": {
+          "en": "Metadata stripped before upload",
+          "zh": "上傳前移除中繼資料"
+        },
+        "body": {
+          "en": "Photos can carry EXIF data such as location and device details. The bot strips it before upload, and a check of the stored file on 2026-09-30 found no metadata.",
+          "zh": "照片可能帶有位置、裝置等 EXIF 資訊。bot 會在上傳前移除；2026-09-30 檢查存放的檔案，沒有找到任何中繼資料。"
+        },
+        "tag": "EXIF"
+      }
+    ]
+  },
+  "quickstart": {
+    "kicker": {
+      "en": "Removal",
+      "zh": "移除"
+    },
+    "title": {
+      "en": "Need a screenshot taken down?",
+      "zh": "需要撤下某張截圖？"
+    },
+    "intro": {
+      "en": "Screenshots sometimes show more than intended, such as names, email addresses, or tokens. If a secret was exposed, rotate it first: deleting the image does not undo the exposure.",
+      "zh": "截圖有時會拍到不該公開的東西，例如姓名、email 或 token。如果外洩的是密碼或金鑰，請先更換：刪掉圖片並不能讓外洩的資訊收回來。"
+    },
+    "nav": {
+      "en": "Removal",
+      "zh": "移除"
+    },
+    "steps": [
+      {
+        "title": {
+          "en": "Identify the file",
+          "zh": "指出是哪個檔案"
+        },
+        "body": {
+          "en": "Note the issue and the screenshot number, or the file path in this repository.",
+          "zh": "記下是哪個 issue、第幾張截圖，或是這個 repo 裡的檔案路徑。"
+        }
+      },
+      {
+        "title": {
+          "en": "Ask for removal",
+          "zh": "提出移除要求"
+        },
+        "body": {
+          "en": "Ask an admin in the 自由工坊 Discord. If you are not in the Discord, open an issue in this repository. Name the file; do not attach the image again.",
+          "zh": "在自由工坊 Discord 找管理員；不在 Discord 的話，就在這個 repo 開 issue。寫出檔案位置就好，不要再附一次圖片。"
+        }
+      },
+      {
+        "title": {
+          "en": "The maintainer deletes it",
+          "zh": "維護者刪除檔案"
+        },
+        "body": {
+          "en": "The file is deleted from main and the issue is edited to drop the link. Older commits still hold the file until the Git history is rewritten.",
+          "zh": "維護者會從 main 刪除檔案，並編輯 issue 拿掉連結。在改寫 Git 歷史之前，舊的 commit 裡仍然留有這個檔案。"
+        }
+      }
+    ]
+  },
+  "status": {
+    "kicker": {
+      "en": "Honest status",
+      "zh": "誠實的現況"
+    },
+    "title": {
+      "en": "Where it stands.",
+      "zh": "目前的樣子。"
+    },
+    "intro": {
+      "en": "Set up in September 2026. So far it holds one screenshot, from a closed test issue.",
+      "zh": "2026 年 9 月建立，目前只存了一張截圖，來自一個已關閉的測試 issue。"
+    },
+    "works": [
+      {
+        "en": "Screenshots stored by path and linked from issues through raw.githubusercontent.com",
+        "zh": "截圖依路徑存放，issue 透過 raw.githubusercontent.com 連結"
+      },
+      {
+        "en": "EXIF stripped before upload; the stored file had no metadata when checked on 2026-09-30",
+        "zh": "上傳前移除 EXIF；2026-09-30 檢查存放的檔案，沒有任何中繼資料"
+      },
+      {
+        "en": "This project page publishes only site/, never the stored images",
+        "zh": "專案介紹頁只發佈 site/，不會發佈存放的圖片"
+      }
+    ],
+    "limits": [
+      {
+        "en": "The repository is public, so a confirmed screenshot is public too. Confirming the draft is the privacy check",
+        "zh": "repo 是公開的，確認過的截圖也就公開了；確認草稿那一步，就是隱私把關"
+      },
+      {
+        "en": "Deleting a file breaks the issue's image link but does not erase it from Git history",
+        "zh": "刪除檔案會讓 issue 裡的圖片連結失效，但不會把它從 Git 歷史裡抹掉"
+      },
+      {
+        "en": "The bot's code is not in this repository",
+        "zh": "bot 的程式碼不在這個 repo 裡"
+      }
+    ]
+  },
+  "facts": [
+    {
+      "label": {
+        "en": "Contents",
+        "zh": "內容"
+      },
+      "value": {
+        "en": "Images only",
+        "zh": "只有圖片"
+      }
+    },
+    {
+      "label": {
+        "en": "Layout",
+        "zh": "分類方式"
+      },
+      "value": {
+        "en": "By repo, then month",
+        "zh": "依 repo，再依月份"
+      }
+    },
+    {
+      "label": {
+        "en": "Metadata",
+        "zh": "中繼資料"
+      },
+      "value": {
+        "en": "EXIF stripped",
+        "zh": "已移除 EXIF"
+      }
+    },
+    {
+      "label": {
+        "en": "Linked via",
+        "zh": "連結方式"
+      },
+      "value": {
+        "en": "Raw GitHub URLs",
+        "zh": "GitHub raw 網址"
+      }
+    },
+    {
+      "label": {
+        "en": "Verified",
+        "zh": "查核日期"
+      },
+      "value": "2026-09-30"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://github.com/teddashh/freeworkshop-issue-assets/blob/main/README.zh-TW.md",
+      "label": {
+        "en": "中文 README",
+        "zh": "中文 README"
+      }
+    }
+  ]
+}
