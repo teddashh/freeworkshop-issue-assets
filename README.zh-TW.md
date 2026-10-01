@@ -6,7 +6,7 @@
 
 **專案介紹頁：** https://teddashh.github.io/freeworkshop-issue-assets/?lang=zh-TW
 
-有人在自由工坊 Discord 回報問題時，小幫手 bot 會先擬好 GitHub issue 草稿。回報者或管理員在 Discord 確認草稿之後，bot 才會開立 issue，把附上的截圖提交到這個 repo，再從 issue 連結過來。Discord CDN 的附件連結會過期，所以圖片需要一個固定的存放位置。
+有人在自由工坊 Discord 回報問題時，小幫手 bot 會先擬好 GitHub issue 草稿。回報者或管理員在 Discord 確認草稿之後，bot 才會開立 issue，把附上的截圖提交到這個 repo，再在 issue 裡附上連結。Discord CDN 的附件連結會過期，所以圖片需要一個固定的存放位置。
 
 ## 路徑規則
 

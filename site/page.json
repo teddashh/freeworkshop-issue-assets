@@ -21,11 +21,11 @@
     },
     "headline": {
       "en": "Discord links expire. <em>Screenshots</em> stay.",
-      "zh": "Discord 連結會過期，<em>截圖</em>不會。"
+      "zh": "連結會過期，<em>截圖</em>不會。"
     },
     "lede": {
       "en": "When someone reports a problem in the 自由工坊 Discord, a helper bot drafts a GitHub issue. After the reporter or an admin confirms the draft, the bot strips each screenshot's metadata, commits it here, and links it from the issue.",
-      "zh": "有人在自由工坊 Discord 回報問題時，小幫手 bot 會先擬好 GitHub issue 草稿。回報者或管理員確認之後，bot 會移除截圖的中繼資料、提交到這個 repo，再從 issue 連結過來。"
+      "zh": "有人在自由工坊 Discord 回報問題時，小幫手 bot 會先擬好 GitHub issue 草稿。回報者或管理員確認之後，bot 會移除截圖的中繼資料、提交到這個 repo，再在 issue 裡附上連結。"
     },
     "primary": {
       "href": "#features",
@@ -175,7 +175,7 @@
     },
     "title": {
       "en": "Need a screenshot taken down?",
-      "zh": "需要撤下某張截圖？"
+      "zh": "需要移除截圖？"
     },
     "intro": {
       "en": "Screenshots sometimes show more than intended, such as names, email addresses, or tokens. If a secret was exposed, rotate it first: deleting the image does not undo the exposure.",

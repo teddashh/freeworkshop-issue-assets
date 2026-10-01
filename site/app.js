@@ -69,7 +69,7 @@
   if (window.Intl && Intl.Segmenter) {
     var segmenter = new Intl.Segmenter("zh-Hant", { granularity: "word" });
     var han = /[\u3400-\u9fff\uf900-\ufaff]/;
-    document.querySelectorAll('h1[lang^="zh"], h2[lang^="zh"], h1 [lang^="zh"], h2 [lang^="zh"]').forEach(function (heading) {
+    document.querySelectorAll('h1[lang^="zh"], h2[lang^="zh"], h1 [lang^="zh"], h2 [lang^="zh"], .quote[lang^="zh"]').forEach(function (heading) {
       var walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
       var nodes = [];
       while (walker.nextNode()) nodes.push(walker.currentNode);
