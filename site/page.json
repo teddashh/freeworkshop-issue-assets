@@ -461,8 +461,8 @@
             "zh": "哪一個月"
           },
           "note": {
-            "en": "The next folder is the year and the month, written YYYY-MM.",
-            "zh": "再往下一層是年份和月份，寫法是 YYYY-MM。"
+            "en": "The next folder is the year and the month, written <code>YYYY-MM</code>.",
+            "zh": "再往下一層是年份和月份，寫法是 <code>YYYY-MM</code>。"
           },
           "tone": "neutral",
           "icon": "clock"
@@ -485,8 +485,8 @@
             "zh": "連到 main"
           },
           "note": {
-            "en": "The issue reaches that file on main through raw.githubusercontent.com.",
-            "zh": "issue 經由 raw.githubusercontent.com，連到 main 上的這個檔。"
+            "en": "The issue reaches that file on main through <code>raw.githubusercontent.com</code>.",
+            "zh": "issue 經由 <code>raw.githubusercontent.com</code>，連到 main 上的這個檔。"
           },
           "tone": "info",
           "icon": "globe"
