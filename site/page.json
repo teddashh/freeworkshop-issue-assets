@@ -389,7 +389,7 @@
           },
           "note": {
             "en": "The bot strips EXIF, commits the image on main, and the issue points at raw.githubusercontent.com.",
-            "zh": "bot 拿掉 EXIF，把圖交上 main，issue 再指向 raw.githubusercontent.com。"
+            "zh": "bot 拿掉 EXIF，把圖交上 main，issue 指向 raw.githubusercontent.com 上的圖。"
           },
           "tone": "warn",
           "icon": "upload"
