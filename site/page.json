@@ -321,15 +321,15 @@
   "flows": [
     {
       "id": "confirm-first",
-      "after": "features",
       "heading": {
-        "en": "Nothing is public until someone confirms",
-        "zh": "確認之前都還不公開"
+        "en": "A yes makes it public",
+        "zh": "點頭之後才公開"
       },
       "intro": {
-        "en": "A report stays in Discord until a person confirms the draft. Confirming is what lets the screenshot into this public repository.",
-        "zh": "回報會留在 Discord，直到有人確認草稿。確認這一步，才讓截圖進入這個公開倉庫。"
+        "en": "The helper bot can draft the issue inside Discord. The screenshot reaches this repo only after the reporter or an admin agrees.",
+        "zh": "小幫手 bot 可以先在 Discord 裡把 issue 寫成草稿。截圖要等回報者或管理員同意，才進得了這個 repo。"
       },
+      "after": "features",
       "spec": {
         "columns": [
           [
@@ -347,49 +347,49 @@
       },
       "zones": {
         "en": [
-          "In Discord",
-          "A person confirms",
-          "Public repo"
+          "Draft stays in chat",
+          "Someone says yes",
+          "Repo is public"
         ],
         "zh": [
-          "在 Discord",
-          "有人確認",
-          "公開倉庫"
+          "草稿還在聊天",
+          "有人說可以",
+          "倉庫對外公開"
         ]
       },
       "steps": [
         {
           "title": {
-            "en": "Report it",
-            "zh": "提出回報"
+            "en": "Say what's wrong",
+            "zh": "先在聊天室"
           },
           "note": {
-            "en": "Someone describes the problem in the 自由工坊 Discord, and the bot drafts an issue there.",
-            "zh": "有人在自由工坊 Discord 描述問題，bot 先在那裡擬好 issue 草稿。"
+            "en": "Someone describes the problem in the 自由工坊 Discord, and the bot writes the draft there.",
+            "zh": "有人在自由工坊 Discord 把問題講出來，bot 就在那邊起草。"
           },
           "tone": "neutral",
           "icon": "chat"
         },
         {
           "title": {
-            "en": "Person confirms",
-            "zh": "有人確認"
+            "en": "Someone agrees",
+            "zh": "等人點頭"
           },
           "note": {
-            "en": "The reporter or an admin confirms that draft. Nothing is committed here before that.",
-            "zh": "回報者或管理員確認草稿。在那之前，這裡不會提交任何截圖。"
+            "en": "The reporter or an admin has to be the one who agrees. Before that, nothing here is committed.",
+            "zh": "同意的人得是回報者或管理員。少了這一步，這裡不會多出檔案。"
           },
           "tone": "accent",
           "icon": "user"
         },
         {
           "title": {
-            "en": "Public file",
-            "zh": "公開存檔"
+            "en": "File goes public",
+            "zh": "圖就公開了"
           },
           "note": {
-            "en": "The bot strips EXIF, commits the image on main, and the issue links the raw URL.",
-            "zh": "bot 去掉 EXIF，把圖提交到 main，issue 再連到 raw 網址。"
+            "en": "The bot strips EXIF, commits the image on main, and the issue points at raw.githubusercontent.com.",
+            "zh": "bot 拿掉 EXIF，把圖交上 main，issue 再指向 raw.githubusercontent.com。"
           },
           "tone": "warn",
           "icon": "upload"
@@ -397,34 +397,34 @@
       ],
       "ticks": [
         {
-          "en": "the draft waits in Discord",
-          "zh": "草稿先留在 Discord"
+          "en": "draft sits in Discord first",
+          "zh": "草稿先停在 Discord"
         },
         {
-          "en": "a person confirms before upload",
-          "zh": "有人確認才上傳"
+          "en": "no file before a person agrees",
+          "zh": "沒人同意就沒有檔"
         },
         {
-          "en": "a confirmed image is public",
-          "zh": "確認過的圖就是公開的"
+          "en": "a yes means anyone can see it",
+          "zh": "點頭之後誰都看得到"
         }
       ],
       "caption": {
-        "en": "When someone reports a problem in the 自由工坊 Discord, the helper bot drafts a GitHub issue there. The screenshot is committed to this repository only after the reporter or an admin confirms that draft. The bot strips EXIF, commits the file on main, and the issue links it. The repository is public, so confirming the draft is the privacy check. The bot's code is not in this repository.",
-        "zh": "有人在自由工坊 Discord 回報問題時，小幫手 bot 會先在那裡擬好 GitHub issue 草稿。截圖要等回報者或管理員確認之後，才會提交到這個 repo。bot 會去掉 EXIF，把檔提交到 main，issue 再連過去。這個 repo 是公開的，所以確認草稿就是隱私把關。bot 的程式不在這個 repo 裡。"
+        "en": "Discord attachment links expire, so a confirmed shot needs a file that stays. This repo is public, and the bot's code is not in it.",
+        "zh": "Discord 的附件連結會過期，所以確認過的圖才需要一個留得住的檔。這個 repo 是公開的，bot 的程式也不在這裡。"
       }
     },
     {
       "id": "file-path",
-      "after": "features",
       "heading": {
-        "en": "Where each file lands",
-        "zh": "每個檔案落在哪"
+        "en": "Follow the folders down",
+        "zh": "沿著資料夾看下去"
       },
       "intro": {
-        "en": "Every stored screenshot uses one path. The issue links that path on the main branch.",
-        "zh": "每張存進來的截圖都走同一種路徑。issue 連的是 main 分支上的那個位置。"
+        "en": "The folders say which repo the issue belongs to, and which month the file went in. The file name is the Discord draft.",
+        "zh": "前面的資料夾告訴你這張 issue 屬於哪個 repo、落在哪一個月。檔名就是那份 Discord 草稿。"
       },
+      "after": "features",
       "spec": {
         "columns": [
           [
@@ -445,48 +445,48 @@
       "steps": [
         {
           "title": {
-            "en": "Issue repo",
-            "zh": "所在倉庫"
+            "en": "Which repo",
+            "zh": "哪個 repo"
           },
           "note": {
-            "en": "The first two folders name the repository the issue was filed in.",
-            "zh": "前兩層資料夾是這張 issue 所在的 repo。"
+            "en": "The first two folders are the owner and the repository where that issue was opened.",
+            "zh": "最前面兩層是 owner 和 repo，issue 就是開在那裡。"
           },
           "tone": "neutral",
           "icon": "hub"
         },
         {
           "title": {
-            "en": "Year month",
-            "zh": "年月資料夾"
+            "en": "Year and month",
+            "zh": "哪一個月"
           },
           "note": {
-            "en": "The next folder is the year and the month, written as YYYY-MM.",
-            "zh": "下一層是年份和月份，寫成 YYYY-MM。"
+            "en": "The next folder is the year and the month, written YYYY-MM.",
+            "zh": "再往下一層是年份和月份，寫法是 YYYY-MM。"
           },
           "tone": "neutral",
           "icon": "clock"
         },
         {
           "title": {
-            "en": "Draft file",
-            "zh": "草稿檔名"
+            "en": "Name the shot",
+            "zh": "檔名怎麼排"
           },
           "note": {
-            "en": "The file name is the Discord draft id, the screenshot number, and the extension.",
-            "zh": "檔名是 Discord 草稿編號、第幾張，再加上副檔名。"
+            "en": "The name joins the Discord draft id, a hyphen, the shot number, and the extension.",
+            "zh": "檔名把草稿編號、一個連字號、第幾張和副檔名接在一起。"
           },
           "tone": "accent",
           "icon": "image"
         },
         {
           "title": {
-            "en": "Raw link",
-            "zh": "Raw 連結"
+            "en": "Link on main",
+            "zh": "連到 main"
           },
           "note": {
-            "en": "The issue links that file on main with a raw GitHub URL.",
-            "zh": "issue 用 main 上的 raw GitHub 網址連到這個檔。"
+            "en": "The issue reaches that file on main through raw.githubusercontent.com.",
+            "zh": "issue 經由 raw.githubusercontent.com，連到 main 上的這個檔。"
           },
           "tone": "info",
           "icon": "globe"
@@ -494,34 +494,34 @@
       ],
       "ticks": [
         {
-          "en": "owner, repo, then YYYY-MM",
-          "zh": "先是 repo，再是年月"
+          "en": "owner and repo come first",
+          "zh": "先是 owner 和 repo"
         },
         {
-          "en": "draft id, number, extension",
-          "zh": "草稿編號、張數、副檔名"
+          "en": "then a YYYY-MM folder",
+          "zh": "接著是年月資料夾"
         },
         {
-          "en": "the issue links main",
-          "zh": "issue 連到 main"
+          "en": "draft id, hyphen, number, extension",
+          "zh": "編號、連字號、張數、副檔名"
         }
       ],
       "caption": {
-        "en": "A stored screenshot is filed at owner/repo/YYYY-MM/draft-id-n.ext: the repository the issue belongs to, the year and month, the Discord draft id, the screenshot number, and the extension. The issue links that file on the main branch through raw.githubusercontent.com. This project page is built from site/ only and does not publish the stored images.",
-        "zh": "存進來的截圖路徑是 owner/repo/YYYY-MM/draft-id-n.ext：issue 所在的 repo、年份月份、Discord 草稿編號、第幾張，以及副檔名。issue 透過 raw.githubusercontent.com 連到 main 分支上的那個檔。這份專案介紹頁只從 site/ 建置，不會發佈存放的圖片。"
+        "en": "The project page is built from site/ alone and does not publish these stored shots.",
+        "zh": "專案介紹頁只從 site/ 建出來，不會把這些存檔的圖發佈出去。"
       }
     },
     {
       "id": "take-down",
-      "after": "start",
       "heading": {
-        "en": "Deleting the file on main",
-        "zh": "從 main 刪掉檔案"
+        "en": "History keeps a copy",
+        "zh": "歷史裡還有一份"
       },
       "intro": {
-        "en": "Removal deletes the file from main and drops the issue link. Older commits still hold the file until the history is rewritten.",
-        "zh": "移除會從 main 刪掉檔案，並拿掉 issue 裡的連結。在改寫歷史之前，舊的 commit 裡還留著這個檔。"
+        "en": "Ask an admin in the 自由工坊 Discord. If you are outside it, open an issue in this repository.",
+        "zh": "去自由工坊 Discord 找管理員。人不在裡面，就在這個 repo 開一張 issue。"
       },
+      "after": "start",
       "spec": {
         "columns": [
           [
@@ -531,59 +531,57 @@
             1
           ],
           [
-            2
+            2,
+            3
           ]
-        ],
-        "sinks": [
-          3
         ],
         "core": 1
       },
       "steps": [
         {
           "title": {
-            "en": "Name the file",
-            "zh": "指出檔案"
+            "en": "Which file",
+            "zh": "指出哪個檔"
           },
           "note": {
-            "en": "Name the issue and the screenshot number, or the path. Do not attach the image again.",
-            "zh": "寫出是哪張 issue、第幾張截圖，或檔案路徑。不要再附一次圖。"
+            "en": "Give the issue and the shot number, or the path. Do not attach the picture again.",
+            "zh": "寫出是哪張 issue、第幾張，或是路徑。請求裡不要再附上那張圖。"
           },
           "tone": "neutral",
           "icon": "doc"
         },
         {
           "title": {
-            "en": "Delete on main",
-            "zh": "刪除 main"
+            "en": "Remove from main",
+            "zh": "刪掉 main"
           },
           "note": {
-            "en": "The maintainer deletes the file from the main branch.",
-            "zh": "維護者從 main 分支刪掉這個檔。"
+            "en": "A maintainer removes that file from the main branch.",
+            "zh": "維護者會把這個檔從 main 分支拿掉。"
           },
           "tone": "accent",
           "icon": "bolt"
         },
         {
           "title": {
-            "en": "Drop the link",
-            "zh": "拿掉連結"
+            "en": "Link stops working",
+            "zh": "連結失效"
           },
           "note": {
-            "en": "The issue is edited so it no longer links to that file.",
-            "zh": "issue 會被改掉，不再連到這個檔。"
+            "en": "The issue is edited too, so that picture link stops working.",
+            "zh": "issue 也會改一版，圖片連結就打不開了。"
           },
           "tone": "info",
           "icon": "check"
         },
         {
           "title": {
-            "en": "History keeps it",
-            "zh": "歷史還在"
+            "en": "Old commits keep it",
+            "zh": "舊紀錄還在"
           },
           "note": {
-            "en": "Older commits still hold the file until someone rewrites the Git history.",
-            "zh": "在改寫 Git 歷史之前，舊的 commit 裡還有這個檔。"
+            "en": "Commits from before that delete still contain the file, unless someone rewrites history.",
+            "zh": "這次刪除之前的 commit 仍留著檔案，除非有人改寫歷史。"
           },
           "tone": "warn",
           "icon": "database"
@@ -591,21 +589,21 @@
       ],
       "ticks": [
         {
-          "en": "name the file, do not reattach",
-          "zh": "指出檔案，不要再附圖"
+          "en": "name it, and do not reattach",
+          "zh": "指出檔案，別再附圖"
         },
         {
-          "en": "main loses the file and the link",
-          "zh": "main 刪檔，連結也拿掉"
+          "en": "file and link leave main",
+          "zh": "main 上的檔和連結都沒了"
         },
         {
-          "en": "old commits still hold it",
-          "zh": "舊 commit 裡還在"
+          "en": "older commits still hold a copy",
+          "zh": "更早的 commit 還留著"
         }
       ],
       "caption": {
-        "en": "To take a screenshot down, name the issue and the screenshot number, or the path in this repository, and do not attach the image again. Ask an admin in the 自由工坊 Discord, or open an issue here if you are not in the Discord. The maintainer deletes the file from main and edits the issue to drop the link. If a password, token, or key is visible, rotate it first: deleting the image does not undo the exposure. Older commits still contain the file until the Git history is rewritten.",
-        "zh": "要撤下截圖，請寫出是哪張 issue、第幾張，或這個 repo 裡的路徑，而且不要再附一次圖。在自由工坊 Discord 找管理員；不在 Discord 的話，就在這個 repo 開 issue。維護者會從 main 刪掉檔案，並編輯 issue 拿掉連結。如果畫面上看得到密碼、token 或金鑰，請先更換：刪掉圖片並不能讓外洩收回來。在改寫 Git 歷史之前，舊的 commit 裡仍然留有這個檔。"
+        "en": "If the picture shows a password, a token, or a key, rotate it before you ask. Removing the file does not pull that secret back.",
+        "zh": "圖裡如果有密碼、token 或金鑰，提出之前先換掉。刪掉檔案，並不會把已經外洩的內容收回來。"
       }
     }
   ]
