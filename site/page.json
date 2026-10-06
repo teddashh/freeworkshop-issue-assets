@@ -323,7 +323,7 @@
       "id": "confirm-first",
       "after": "features",
       "heading": {
-        "en": "Nothing is public until confirm",
+        "en": "Nothing is public until someone confirms",
         "zh": "確認之前都還不公開"
       },
       "intro": {
